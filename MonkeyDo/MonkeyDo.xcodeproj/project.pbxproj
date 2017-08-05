@@ -69,6 +69,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A60B4AAC1F3663E0001BA55E /* KeyCode helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */,
+				A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */,
+				A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */,
+			);
+			path = "KeyCode helpers";
+			sourceTree = "<group>";
+		};
+		A60B4AAD1F3663F6001BA55E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */,
+				A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */,
+				A6ADEECF1F34EC0200CE605E /* Assets.xcassets */,
+				A6ADEED41F34EC0200CE605E /* Info.plist */,
+				A6ADEED51F34EC0200CE605E /* MonkeyDo.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A60B4AAE1F366421001BA55E /* stdlib helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6ADEEED1F34F5CB00CE605E /* Result.swift */,
+				A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */,
+			);
+			path = "stdlib helpers";
+			sourceTree = "<group>";
+		};
 		A6ADEEBF1F34EC0200CE605E = {
 			isa = PBXGroup;
 			children = (
@@ -90,20 +121,13 @@
 		A6ADEECA1F34EC0200CE605E /* MonkeyDo */ = {
 			isa = PBXGroup;
 			children = (
+				A6ADEED11F34EC0200CE605E /* Main.storyboard */,
 				A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */,
 				A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */,
-				A6ADEEED1F34F5CB00CE605E /* Result.swift */,
 				A6ADEECD1F34EC0200CE605E /* ViewController.swift */,
-				A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */,
-				A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */,
-				A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */,
-				A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */,
-				A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */,
-				A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */,
-				A6ADEECF1F34EC0200CE605E /* Assets.xcassets */,
-				A6ADEED11F34EC0200CE605E /* Main.storyboard */,
-				A6ADEED41F34EC0200CE605E /* Info.plist */,
-				A6ADEED51F34EC0200CE605E /* MonkeyDo.entitlements */,
+				A60B4AAE1F366421001BA55E /* stdlib helpers */,
+				A60B4AAC1F3663E0001BA55E /* KeyCode helpers */,
+				A60B4AAD1F3663F6001BA55E /* Supporting Files */,
 			);
 			path = MonkeyDo;
 			sourceTree = "<group>";
