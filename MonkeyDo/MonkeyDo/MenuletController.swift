@@ -22,6 +22,9 @@ class MenuletController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var typeScript: NSAppleScript! = nil
     
+    var snippetsFileURL: URL?
+    var watcher: DirectoryObserver?
+    
     override func awakeFromNib() {
         statusItem.title = "🐵"
         statusItem.menu = menulet
@@ -86,17 +89,23 @@ class MenuletController: NSObject {
         openSnippets(at: url) { (result) in
             switch result {
             case .failure(let error):
+                self.snippetsFileURL = nil
                 let alert = NSAlert(error: error)
                 alert.alertStyle = .critical
                 alert.runModal()
             case .success(let snippets):
                 self.snippets = snippets
                 self.currentSnippetIndex = 0
+                self.snippetsFileURL = url
+                let directoryURL = url.deletingLastPathComponent()
+                watcher = DirectoryObserver(directory: directoryURL)
+                watcher?.delegate = self
                 print("Loaded \(snippets.count) snippets.")
-                break
             }
         }
     }
+    
+    
 
     func openSnippets(at url: URL, completion: (Result<[String]>)->Void) {
         var result: Result<[String]>
@@ -170,5 +179,29 @@ class MenuletController: NSObject {
     //            let charEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
     //            charEvent?.post(tap: .cgSessionEventTap)
     //        }
+
+}
+
+extension MenuletController: DirectoryObserverDelegate {
+    
+    func directoryObserver(_ bdo: DirectoryObserver,
+                           didObserveFileSystemEvents events: [BNRFSEvent]) {
+        guard let snippetsFileURL = snippetsFileURL else { return }
+        let snippetsFilePath = snippetsFileURL.path
+        guard events.first?.path == snippetsFilePath else { return }
+        openSnippets(at: snippetsFileURL) { (result) in
+            switch result {
+            case .failure(let error):
+                self.snippetsFileURL = nil
+                let alert = NSAlert(error: error)
+                alert.messageText = "Your snippets file changed on disk, but the new snippets couldn't be imported.\n\nYour loaded snippets have been left unchanged."
+                alert.alertStyle = .critical
+                alert.runModal()
+            case .success(let snippets):
+                self.snippets = snippets
+                print("Reloaded \(snippets.count) snippets.")
+            }
+        }
+    }
 
 }

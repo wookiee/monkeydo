@@ -3,3 +3,5 @@
 //
 
 #import "CGKeyCodeHelpers.h"
+#import "FSEventStream+SwiftBridging.h"
+#import "BNRFSEvent.h"
