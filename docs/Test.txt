@@ -1,0 +1,10 @@
+@IBAction func selectSnippetsMenuItemClicked(_ sender: NSMenuItem) {
+
+}
+
+@IBAction func quitMenuItemClicked(_ sender: NSMenuItem) {
+#####
+statusItem.title = "🐵"
+statusItem.menu = menulet
+#####
+// Comment says what?
