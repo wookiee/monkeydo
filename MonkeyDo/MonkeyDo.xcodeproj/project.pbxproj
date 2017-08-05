@@ -180,6 +180,7 @@
 				A6ADEEC41F34EC0200CE605E /* Sources */,
 				A6ADEEC51F34EC0200CE605E /* Frameworks */,
 				A6ADEEC61F34EC0200CE605E /* Resources */,
+				A61217851F366DF600D81F7F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,6 +267,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A61217851F366DF600D81F7F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PLIST_FILE=\"\"\nif [ -f \"$INFOPLIST_FILE\" ]; then\nPLIST_FILE=\"$INFOPLIST_FILE\"\nelse\nif [ -f \"$SRCROOT/$INFOPLIST_FILE\" ]; then\nPLIST_FILE=\"$SRCROOT/$INFOPLIST_FILE\"\nelse\nexit 0\nfi\nfi\n\nBN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$PLIST_FILE\")\nBN=$(($BN + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $BN\" \"$PLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6ADEEC41F34EC0200CE605E /* Sources */ = {
