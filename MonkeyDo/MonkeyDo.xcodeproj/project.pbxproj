@@ -1,0 +1,468 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */; };
+		A6ADEECE1F34EC0200CE605E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECD1F34EC0200CE605E /* ViewController.swift */; };
+		A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEECF1F34EC0200CE605E /* Assets.xcassets */; };
+		A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEED11F34EC0200CE605E /* Main.storyboard */; };
+		A6ADEEDF1F34EC0200CE605E /* MonkeyDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */; };
+		A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */; };
+		A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEED1F34F5CB00CE605E /* Result.swift */; };
+		A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */; };
+		A6BB3CAE1F356BDA00BEA498 /* CGKeyCodeHelpers.c in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */; };
+		A6BB3CB01F356E8700BEA498 /* CGKeyCode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */; };
+		A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */ = {isa = PBXBuildFile; fileRef = A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6ADEEDB1F34EC0200CE605E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6ADEEC01F34EC0200CE605E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6ADEEC71F34EC0200CE605E;
+			remoteInfo = MonkeyDo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6ADEECD1F34EC0200CE605E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6ADEECF1F34EC0200CE605E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6ADEED21F34EC0200CE605E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6ADEED41F34EC0200CE605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6ADEED51F34EC0200CE605E /* MonkeyDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonkeyDo.entitlements; sourceTree = "<group>"; };
+		A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyDoTests.swift; sourceTree = "<group>"; };
+		A6ADEEE01F34EC0200CE605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuletController.swift; sourceTree = "<group>"; };
+		A6ADEEED1F34F5CB00CE605E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonkeyDo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGKeyCodeHelpers.h; sourceTree = "<group>"; };
+		A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CGKeyCodeHelpers.c; sourceTree = "<group>"; };
+		A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGKeyCode+Helpers.swift"; sourceTree = "<group>"; };
+		A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypePasteboard.scpt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6ADEEC51F34EC0200CE605E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6ADEED71F34EC0200CE605E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6ADEEBF1F34EC0200CE605E = {
+			isa = PBXGroup;
+			children = (
+				A6ADEECA1F34EC0200CE605E /* MonkeyDo */,
+				A6ADEEDD1F34EC0200CE605E /* MonkeyDoTests */,
+				A6ADEEC91F34EC0200CE605E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6ADEEC91F34EC0200CE605E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */,
+				A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6ADEECA1F34EC0200CE605E /* MonkeyDo */ = {
+			isa = PBXGroup;
+			children = (
+				A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */,
+				A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */,
+				A6ADEEED1F34F5CB00CE605E /* Result.swift */,
+				A6ADEECD1F34EC0200CE605E /* ViewController.swift */,
+				A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */,
+				A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */,
+				A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */,
+				A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */,
+				A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */,
+				A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */,
+				A6ADEECF1F34EC0200CE605E /* Assets.xcassets */,
+				A6ADEED11F34EC0200CE605E /* Main.storyboard */,
+				A6ADEED41F34EC0200CE605E /* Info.plist */,
+				A6ADEED51F34EC0200CE605E /* MonkeyDo.entitlements */,
+			);
+			path = MonkeyDo;
+			sourceTree = "<group>";
+		};
+		A6ADEEDD1F34EC0200CE605E /* MonkeyDoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */,
+				A6ADEEE01F34EC0200CE605E /* Info.plist */,
+			);
+			path = MonkeyDoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6ADEEC71F34EC0200CE605E /* MonkeyDo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6ADEEE31F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDo" */;
+			buildPhases = (
+				A6ADEEC41F34EC0200CE605E /* Sources */,
+				A6ADEEC51F34EC0200CE605E /* Frameworks */,
+				A6ADEEC61F34EC0200CE605E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MonkeyDo;
+			productName = MonkeyDo;
+			productReference = A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6ADEED91F34EC0200CE605E /* MonkeyDoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6ADEEE61F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDoTests" */;
+			buildPhases = (
+				A6ADEED61F34EC0200CE605E /* Sources */,
+				A6ADEED71F34EC0200CE605E /* Frameworks */,
+				A6ADEED81F34EC0200CE605E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6ADEEDC1F34EC0200CE605E /* PBXTargetDependency */,
+			);
+			name = MonkeyDoTests;
+			productName = MonkeyDoTests;
+			productReference = A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6ADEEC01F34EC0200CE605E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Mikey Ward";
+				TargetAttributes = {
+					A6ADEEC71F34EC0200CE605E = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+					};
+					A6ADEED91F34EC0200CE605E = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = A6ADEEC71F34EC0200CE605E;
+					};
+				};
+			};
+			buildConfigurationList = A6ADEEC31F34EC0200CE605E /* Build configuration list for PBXProject "MonkeyDo" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6ADEEBF1F34EC0200CE605E;
+			productRefGroup = A6ADEEC91F34EC0200CE605E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6ADEEC71F34EC0200CE605E /* MonkeyDo */,
+				A6ADEED91F34EC0200CE605E /* MonkeyDoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6ADEEC61F34EC0200CE605E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */,
+				A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */,
+				A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6ADEED81F34EC0200CE605E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6ADEEC41F34EC0200CE605E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6BB3CAE1F356BDA00BEA498 /* CGKeyCodeHelpers.c in Sources */,
+				A6ADEECE1F34EC0200CE605E /* ViewController.swift in Sources */,
+				A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */,
+				A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */,
+				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
+				A6BB3CB01F356E8700BEA498 /* CGKeyCode+Helpers.swift in Sources */,
+				A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6ADEED61F34EC0200CE605E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6ADEEDF1F34EC0200CE605E /* MonkeyDoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6ADEEDC1F34EC0200CE605E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6ADEEC71F34EC0200CE605E /* MonkeyDo */;
+			targetProxy = A6ADEEDB1F34EC0200CE605E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6ADEED11F34EC0200CE605E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6ADEED21F34EC0200CE605E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6ADEEE11F34EC0200CE605E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A6ADEEE21F34EC0200CE605E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		A6ADEEE41F34EC0200CE605E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MonkeyDo/MonkeyDo.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VMY8R4T742;
+				INFOPLIST_FILE = MonkeyDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MonkeyDo/MonkeyDo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		A6ADEEE51F34EC0200CE605E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MonkeyDo/MonkeyDo.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VMY8R4T742;
+				INFOPLIST_FILE = MonkeyDo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MonkeyDo/MonkeyDo-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		A6ADEEE71F34EC0200CE605E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VMY8R4T742;
+				INFOPLIST_FILE = MonkeyDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyDo.app/Contents/MacOS/MonkeyDo";
+			};
+			name = Debug;
+		};
+		A6ADEEE81F34EC0200CE605E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VMY8R4T742;
+				INFOPLIST_FILE = MonkeyDoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyDo.app/Contents/MacOS/MonkeyDo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6ADEEC31F34EC0200CE605E /* Build configuration list for PBXProject "MonkeyDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6ADEEE11F34EC0200CE605E /* Debug */,
+				A6ADEEE21F34EC0200CE605E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6ADEEE31F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6ADEEE41F34EC0200CE605E /* Debug */,
+				A6ADEEE51F34EC0200CE605E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6ADEEE61F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6ADEEE71F34EC0200CE605E /* Debug */,
+				A6ADEEE81F34EC0200CE605E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6ADEEC01F34EC0200CE605E /* Project object */;
+}
