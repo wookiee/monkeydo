@@ -149,10 +149,7 @@ class MenuletController: NSObject {
             type(snippets[currentSnippetIndex])
             currentSnippetIndex += 1
         } else {
-            let alert = NSAlert()
-            alert.messageText = "No pending snippets!"
-            alert.alertStyle = .warning
-            alert.runModal()
+            NSSound.beep()
         }
     }
     
