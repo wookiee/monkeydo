@@ -113,7 +113,10 @@ class MenuletController: NSObject {
         do {
             let blob = try String(contentsOf: url)
             let strings = blob.components(separatedBy: "#####")
-            result = .success(strings)
+            let trimmedStrings = strings.map {
+                return $0.trimmingCharacters(in: .whitespacesAndNewlines)
+            }
+            result = .success(trimmedStrings)
         } catch {
             result = .failure(error)
         }
