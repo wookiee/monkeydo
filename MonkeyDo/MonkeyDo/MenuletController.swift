@@ -13,8 +13,10 @@ import Quartz
 class MenuletController: NSObject {
     
     @IBOutlet weak var menulet: NSMenu!
-    @IBOutlet weak var dvorakModeMenuItem: NSMenuItem!
-    var isDvorakEnabled = UserDefault(key: "isDvorakEnabled", value: false)
+    @IBOutlet weak var nextSnippetMenuItem: NSMenuItem!
+    @IBOutlet weak var typingEnabledMenuItem: NSMenuItem!
+    var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
+    let isDvorakEnabled = UserDefault(key: "isDvorakEnabled", value: true)
 
     var snippets: [String] = []
     var currentSnippetIndex = 0
@@ -30,7 +32,7 @@ class MenuletController: NSObject {
         statusItem.menu = menulet
         
         registerShortcut()
-        dvorakModeMenuItem.state = isDvorakEnabled.boolValue ? .on : .off
+        typingEnabledMenuItem.state = isTypingEnabled.boolValue ? .on : .off
         
         let scriptURL = Bundle.main.url(forResource: "TypePasteboard", withExtension: "scpt")!
         typeScript = NSAppleScript(contentsOf: scriptURL, error: nil)!
@@ -49,27 +51,21 @@ class MenuletController: NSObject {
     @IBAction func selectSnippetsMenuItemClicked(_ sender: NSMenuItem) {
         selectSnippetsFile()
     }
-
-    
-    
-    // Booyah!
-    
-    
-    @IBAction func dvorakMenuItemClicked(_ sender: NSMenuItem) {
-        if isDvorakEnabled.boolValue {
-            isDvorakEnabled.boolValue = false
-            sender.state = .off
-        } else {
-            isDvorakEnabled.boolValue = true
-            sender.state = .on
-        }
-        registerShortcut()
-    }
     
     @IBAction func quitMenuItemClicked(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
     
+    @IBAction func typingEnabledMenuItemClicked(_ sender: NSMenuItem) {
+        switch isTypingEnabled.boolValue {
+        case true:
+            isTypingEnabled.boolValue = false
+            typingEnabledMenuItem.state = .off
+        case false:
+            isTypingEnabled.boolValue = true
+            typingEnabledMenuItem.state = .on
+        }
+    }
     // MARK: - Importing Snippets
     
     func makeOpenPanel() -> NSOpenPanel {
@@ -159,13 +155,15 @@ class MenuletController: NSObject {
     func type(_ string: String) {
         pasteboard.clearContents()
         pasteboard.setString(string, forType: .string)
-        var errDict: NSDictionary? = [:]
-        typeScript.executeAndReturnError(&errDict)
-        if let err = errDict, err.count > 0 {
-            let alert = NSAlert()
-            alert.messageText = err.description
-            alert.alertStyle = .critical
-            alert.runModal()
+        if isTypingEnabled.boolValue {
+            var errDict: NSDictionary? = [:]
+            typeScript.executeAndReturnError(&errDict)
+            if let err = errDict, err.count > 0 {
+                let alert = NSAlert()
+                alert.messageText = err.description
+                alert.alertStyle = .critical
+                alert.runModal()
+            }
         }
     }
 
@@ -199,6 +197,7 @@ extension MenuletController: DirectoryObserverDelegate {
                 alert.runModal()
             case .success(let snippets):
                 self.snippets = snippets
+                self.currentSnippetIndex = 0
                 print("Reloaded \(snippets.count) snippets.")
             }
         }

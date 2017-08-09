@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13168.3"/>
     </dependencies>
     <scenes>
@@ -61,7 +62,7 @@
                                         <menuItem title="Type Next Snippet" id="27T-44-48X">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="typeMenuItemClicked:" target="1M4-gj-tcw" id="kLX-oF-1Fp"/>
+                                                <action selector="typingEnabledMenuItemClicked" target="1M4-gj-tcw" id="kLX-oF-1Fp"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -77,42 +78,43 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="1M4-gj-tcw" customClass="MenuletController" customModule="MonkeyDo" customModuleProvider="target">
                     <connections>
-                        <outlet property="dvorakModeMenuItem" destination="X2g-6Q-YCz" id="uzJ-YP-Oly"/>
                         <outlet property="menulet" destination="Tkt-n0-McC" id="Dcd-jf-eZe"/>
+                        <outlet property="nextSnippetMenuItem" destination="Y7K-fW-qtf" id="8se-fh-Kcr"/>
+                        <outlet property="typingEnabledMenuItem" destination="OaD-Ml-2fw" id="h2z-Qr-16F"/>
                     </connections>
                 </customObject>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <menu id="Tkt-n0-McC">
                     <items>
-                        <menuItem title="Type Next Snippet          ^⌥⌘;" allowsKeyEquivalentWhenHidden="YES" id="Y7K-fW-qtf">
-                            <modifierMask key="keyEquivalentModifierMask"/>
+                        <menuItem title="Copy Next Snippet" keyEquivalent=";" allowsKeyEquivalentWhenHidden="YES" id="Y7K-fW-qtf">
+                            <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES" command="YES"/>
                             <connections>
-                                <action selector="typeMenuItemClicked:" target="1M4-gj-tcw" id="v2K-wO-G5h"/>
+                                <action selector="typeMenuItemClicked:" target="1M4-gj-tcw" id="pbf-jB-2QC"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Reset to First Snippet" id="0w0-V0-q6P">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="resetMenuItemClicked:" target="1M4-gj-tcw" id="lRN-qu-1uM"/>
+                                <action selector="resetMenuItemClicked:" target="1M4-gj-tcw" id="xbA-as-lVf"/>
                             </connections>
                         </menuItem>
                         <menuItem isSeparatorItem="YES" id="Vu4-R2-vkK"/>
                         <menuItem title="Select Snippets File..." id="OF4-ba-bwP">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="selectSnippetsMenuItemClicked:" target="1M4-gj-tcw" id="cBc-ug-ki9"/>
+                                <action selector="selectSnippetsMenuItemClicked:" target="1M4-gj-tcw" id="Lbc-D5-gtj"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Dvorak Mode" id="X2g-6Q-YCz">
+                        <menuItem title="Auto-type Snippets on Copy" id="OaD-Ml-2fw">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="dvorakMenuItemClicked:" target="1M4-gj-tcw" id="b8R-Wd-gTD"/>
+                                <action selector="typingEnabledMenuItemClicked:" target="1M4-gj-tcw" id="nsP-Jr-H6Y"/>
                             </connections>
                         </menuItem>
                         <menuItem title="Quit MonkeyDo" id="ObS-Cu-Guq">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="quitMenuItemClicked:" target="1M4-gj-tcw" id="eUI-G8-dzq"/>
+                                <action selector="quitMenuItemClicked:" target="1M4-gj-tcw" id="sN2-xp-ms2"/>
                             </connections>
                         </menuItem>
                     </items>
