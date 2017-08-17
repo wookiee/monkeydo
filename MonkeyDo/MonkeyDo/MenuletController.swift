@@ -17,7 +17,6 @@ class MenuletController: NSObject {
     @IBOutlet weak var typingEnabledMenuItem: NSMenuItem!
     @IBOutlet weak var editSnippetsMenuItem: NSMenuItem!
     var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
-    let isDvorakEnabled = UserDefault(key: "isDvorakEnabled", value: true)
 
     let snippetStore = SnippetStore()
     var snippets: [Snippet] = []
@@ -146,7 +145,7 @@ class MenuletController: NSObject {
                                 forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionary
         guard AXIsProcessTrustedWithOptions(opts) == true else { return }
         
-        let keyCode = isDvorakEnabled.boolValue ? kVK_ANSI_Semicolon : kVK_ANSI_S
+        let keyCode = kVK_ANSI_Semicolon
         
         if let eventMonitor = eventMonitor {
             NSEvent.removeMonitor(eventMonitor)
