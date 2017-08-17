@@ -9,5 +9,6 @@
 import Cocoa
 
 class SnippetsWindowController: NSWindowController {
-
+    var snippetStore: SnippetStore!
+    var onClose: ((NSWindowController)->Void)?
 }

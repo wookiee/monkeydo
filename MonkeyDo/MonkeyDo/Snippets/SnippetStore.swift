@@ -10,7 +10,17 @@ import Foundation
 
 class SnippetStore {
     
-    var snippets: [Snippet] = []
+    private var currentSnippetIndex = 0 {
+        didSet {
+            precondition(currentSnippetIndex < snippets.count, "Illegal: cannot set currentSnippetIndex to \(currentSnippetIndex); there are \(snippets.count) snippets.")
+        }
+    }
+    private(set) var snippets: [Snippet] = [] {
+        didSet {
+            if currentSnippetIndex >= snippets.count { currentSnippetIndex = 0 }
+        }
+    }
+
     private(set) var storeURL: URL?
     
     private let encoder = JSONEncoder()
@@ -21,6 +31,8 @@ class SnippetStore {
         q.maxConcurrentOperationCount = 1
         return q
     }()
+    
+    // MARK: - Managing Snippets File
     
     func load(from url: URL, andThenUpon completionQueue: OperationQueue, execute completion: @escaping (Result<[Snippet]>)->Void) {
         queue.addOperation {
@@ -76,5 +88,18 @@ class SnippetStore {
             print("Failed to save snippets: \(error)")
             return BooleanResult.failure(error)
         }
+    }
+    
+    // MARK: - Reporting Snippets
+    
+    func next() -> Snippet? {
+        guard currentSnippetIndex < snippets.count else { return nil }
+        let nextSnippet = snippets[currentSnippetIndex]
+        currentSnippetIndex += 1
+        return nextSnippet
+    }
+    
+    func reset() {
+        currentSnippetIndex = 0
     }
 }

@@ -19,8 +19,6 @@ class MenuletController: NSObject {
     var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
 
     let snippetStore = SnippetStore()
-    var snippets: [Snippet] = []
-    var currentSnippetIndex = 0
     
     let pasteboard = NSPasteboard.general
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -48,7 +46,7 @@ class MenuletController: NSObject {
     }
     
     @IBAction func resetMenuItemClicked(_ sender: NSMenuItem) {
-        currentSnippetIndex = 0
+        snippetStore.reset()
     }
     
     @IBAction func selectSnippetsMenuItemClicked(_ sender: NSMenuItem) {
@@ -125,8 +123,7 @@ class MenuletController: NSObject {
                 alert.alertStyle = .critical
                 alert.runModal()
             case .success(let snippets):
-                self.snippets = snippets
-                self.currentSnippetIndex = 0
+                self.snippetStore.reset()
                 self.watcher = FileObserver(file: url)
                 self.watcher!.delegate = self
                 print("Loaded \(snippets.count) snippets.")
@@ -134,8 +131,15 @@ class MenuletController: NSObject {
         }
     }
     
+    lazy var snippetEditor: SnippetsWindowController = {
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Snippets"), bundle: nil)
+        let snippetsWC = storyboard.instantiateInitialController() as! SnippetsWindowController
+        return snippetsWC
+    }()
+    
     func showSnippetEditor() {
-        
+        snippetEditor.snippetStore = snippetStore
+        snippetEditor.showWindow(nil)
     }
     
     // MARK: - Receiving Keyboard Shortcuts
@@ -163,13 +167,12 @@ class MenuletController: NSObject {
     // MARK: - Outputting keystrokes
     
     func typeNextSnippet() {
-        print("Typing snippet at index \(currentSnippetIndex)")
-        if currentSnippetIndex < snippets.count {
-            type(snippets[currentSnippetIndex].body)
-            currentSnippetIndex += 1
-        } else {
+        guard let snippetText = snippetStore.next()?.body else {
             NSSound.beep()
+            return
         }
+        
+        type(snippetText)
     }
     
     func type(_ string: String) {
@@ -214,8 +217,7 @@ extension MenuletController: FileObserverDelegate {
                 alert.alertStyle = .critical
                 alert.runModal()
             case .success(let snippets):
-                self.snippets = snippets
-                self.currentSnippetIndex = 0
+                self.snippetStore.reset()
                 print("Reloaded \(snippets.count) snippets.")
             }
         }
