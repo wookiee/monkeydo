@@ -24,8 +24,6 @@
 		A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */; };
 		A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEED1F34F5CB00CE605E /* Result.swift */; };
 		A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */; };
-		A6BB3CAE1F356BDA00BEA498 /* CGKeyCodeHelpers.c in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */; };
-		A6BB3CB01F356E8700BEA498 /* CGKeyCode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */; };
 		A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */ = {isa = PBXBuildFile; fileRef = A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */; };
 /* End PBXBuildFile section */
 
@@ -65,9 +63,6 @@
 		A6ADEEED1F34F5CB00CE605E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonkeyDo-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
-		A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGKeyCodeHelpers.h; sourceTree = "<group>"; };
-		A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CGKeyCodeHelpers.c; sourceTree = "<group>"; };
-		A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGKeyCode+Helpers.swift"; sourceTree = "<group>"; };
 		A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypePasteboard.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,16 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A60B4AAC1F3663E0001BA55E /* KeyCode helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A6BB3CAC1F356BDA00BEA498 /* CGKeyCodeHelpers.h */,
-				A6BB3CAD1F356BDA00BEA498 /* CGKeyCodeHelpers.c */,
-				A6BB3CAF1F356E8700BEA498 /* CGKeyCode+Helpers.swift */,
-			);
-			path = "KeyCode helpers";
-			sourceTree = "<group>";
-		};
 		A60B4AAD1F3663F6001BA55E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +173,6 @@
 				A631FEB61F461E4700849B28 /* Snippets */,
 				A631FEB31F461DBB00849B28 /* Editing Snippets */,
 				A60B4AAE1F366421001BA55E /* stdlib helpers */,
-				A60B4AAC1F3663E0001BA55E /* KeyCode helpers */,
 				A60B4AAF1F366474001BA55E /* Watching file changes */,
 				A60B4AAD1F3663F6001BA55E /* Supporting Files */,
 			);
@@ -324,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6BB3CAE1F356BDA00BEA498 /* CGKeyCodeHelpers.c in Sources */,
 				A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */,
 				A6ADEECE1F34EC0200CE605E /* SnippetsViewController.swift in Sources */,
 				A631FEB81F461E8800849B28 /* Snippet.swift in Sources */,
@@ -334,7 +317,6 @@
 				A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */,
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
 				A631FEBC1F4620BE00849B28 /* SnippetDetailViewController.swift in Sources */,
-				A6BB3CB01F356E8700BEA498 /* CGKeyCode+Helpers.swift in Sources */,
 				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
 				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
 				A631FEB51F461E3100849B28 /* SnippetsWindowController.swift in Sources */,

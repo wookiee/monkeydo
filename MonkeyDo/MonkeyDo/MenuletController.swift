@@ -187,17 +187,6 @@ class MenuletController: NSObject {
             }
         }
     }
-
-    // WIP solution for literally posting keyboard events? Prolly not gonna work because unicode.
-    //        for char in string.characters {
-    //            guard let keyCode = CGKeyCode(char) else {
-    //                print("Dropping char: \(char)")
-    //                continue
-    //            }
-    //
-    //            let charEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
-    //            charEvent?.post(tap: .cgSessionEventTap)
-    //        }
     
     // MARK: - Menu Management
     
