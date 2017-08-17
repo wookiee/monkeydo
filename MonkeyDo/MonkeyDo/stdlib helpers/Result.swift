@@ -15,7 +15,18 @@ enum Result<Content> {
     case failure(Error)
 }
 
-enum BooleanResult {
+enum BooleanResult: Equatable {
     case success
     case failure(Error)
+    
+    static func ==(left: BooleanResult, right: BooleanResult) -> Bool {
+        switch (left, right) {
+        case (.success, .success):
+            return true
+        case (.success, _), (_, .success):
+            return false
+        case (.failure(let fl), .failure(let fr)):
+            return fl.localizedDescription == fr.localizedDescription
+        }
+    }
 }

@@ -11,8 +11,8 @@ import Foundation
 class SnippetStore {
     
     var snippets: [Snippet] = []
-    
     private(set) var storeURL: URL?
+    
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
@@ -45,6 +45,17 @@ class SnippetStore {
     
     func save(andThenUpon completionQueue: OperationQueue, execute completion: @escaping (BooleanResult)->Void) {
         queue.addOperation {
+            let savedSuccessfully = self.save()
+            completionQueue.addOperation {
+                completion(savedSuccessfully)
+            }
+        }
+    }
+    
+    func createNew(at url: URL, andThenUpon completionQueue: OperationQueue, execute completion: @escaping (BooleanResult)->Void) {
+        queue.addOperation {
+            self.storeURL = url
+            self.snippets = [Snippet(name: "Sample", body: "this is a sample snippet!")]
             let savedSuccessfully = self.save()
             completionQueue.addOperation {
                 completion(savedSuccessfully)

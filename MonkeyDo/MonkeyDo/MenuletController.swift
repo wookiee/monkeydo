@@ -15,6 +15,7 @@ class MenuletController: NSObject {
     @IBOutlet weak var menulet: NSMenu!
     @IBOutlet weak var nextSnippetMenuItem: NSMenuItem!
     @IBOutlet weak var typingEnabledMenuItem: NSMenuItem!
+    @IBOutlet weak var editSnippetsMenuItem: NSMenuItem!
     var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
     let isDvorakEnabled = UserDefault(key: "isDvorakEnabled", value: true)
 
@@ -37,6 +38,8 @@ class MenuletController: NSObject {
         
         let scriptURL = Bundle.main.url(forResource: "TypePasteboard", withExtension: "scpt")!
         typeScript = NSAppleScript(contentsOf: scriptURL, error: nil)!
+        
+        selectSnippetsFile()
     }
 
     // MARK: - Actions
@@ -53,6 +56,14 @@ class MenuletController: NSObject {
         selectSnippetsFile()
     }
     
+    @IBAction func newSnippetsMenuItemClicked(_ sender: NSMenuItem) {
+        newSnippetsFile()
+    }
+    
+    @IBAction func editSnippetsMenuItemClicked(_ sender: NSMenuItem) {
+        showSnippetEditor()
+    }
+    
     @IBAction func quitMenuItemClicked(_ sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
     }
@@ -67,23 +78,47 @@ class MenuletController: NSObject {
             typingEnabledMenuItem.state = .on
         }
     }
-    // MARK: - Importing Snippets
+    
+    // MARK: - Snippets File Management
     
     func makeOpenPanel() -> NSOpenPanel {
         let panel = NSOpenPanel()
         panel.allowsMultipleSelection = false
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
-        panel.allowedFileTypes = ["public.text", "public.json"]
+        panel.allowedFileTypes = ["json"]
         panel.title = "Open Snippets"
+        return panel
+    }
+    
+    func makeSavePanel() -> NSSavePanel {
+        let panel = NSSavePanel()
+        panel.title = "New Snippets File"
+        panel.message = "Select a location for your new snippets file"
+        panel.allowedFileTypes = ["json"]
         return panel
     }
     
     func selectSnippetsFile() {
         let openPanel = makeOpenPanel()
-        openPanel.runModal()
-        guard let url = openPanel.urls.first else { return }
-        
+        openPanel.begin { (response) in
+            guard response == NSApplication.ModalResponse.OK, let url = openPanel.urls.first else { return }
+            self.loadSnippets(at: url)
+        }
+    }
+    
+    func newSnippetsFile() {
+        let savePanel = makeSavePanel()
+        savePanel.begin { (response) in
+            guard response == NSApplication.ModalResponse.OK, let url = savePanel.url else { return }
+            self.snippetStore.createNew(at: url, andThenUpon: OperationQueue.main, execute: { (result) in
+                guard result == BooleanResult.success else { return }
+                self.loadSnippets(at: url)
+            })
+        }
+    }
+    
+    func loadSnippets(at url: URL) {
         snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
@@ -98,6 +133,10 @@ class MenuletController: NSObject {
                 print("Loaded \(snippets.count) snippets.")
             }
         }
+    }
+    
+    func showSnippetEditor() {
+        
     }
     
     // MARK: - Receiving Keyboard Shortcuts
@@ -159,6 +198,17 @@ class MenuletController: NSObject {
     //            let charEvent = CGEvent(keyboardEventSource: nil, virtualKey: keyCode, keyDown: true)
     //            charEvent?.post(tap: .cgSessionEventTap)
     //        }
+    
+    // MARK: - Menu Management
+    
+    override func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        switch menuItem {
+        case editSnippetsMenuItem:
+            return snippetStore.storeURL != nil
+        default:
+            return true
+        }
+    }
 
 }
 

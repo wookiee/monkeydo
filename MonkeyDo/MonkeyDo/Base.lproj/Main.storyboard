@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13168.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13178.6"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -78,6 +78,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="1M4-gj-tcw" customClass="MenuletController" customModule="MonkeyDo" customModuleProvider="target">
                     <connections>
+                        <outlet property="editSnippetsMenuItem" destination="eev-Vw-mYr" id="owi-Ji-QQl"/>
                         <outlet property="menulet" destination="Tkt-n0-McC" id="Dcd-jf-eZe"/>
                         <outlet property="nextSnippetMenuItem" destination="Y7K-fW-qtf" id="8se-fh-Kcr"/>
                         <outlet property="typingEnabledMenuItem" destination="OaD-Ml-2fw" id="h2z-Qr-16F"/>
@@ -98,6 +99,12 @@
                                 <action selector="resetMenuItemClicked:" target="1M4-gj-tcw" id="xbA-as-lVf"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Auto-type Snippets on Copy" id="OaD-Ml-2fw">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="typingEnabledMenuItemClicked:" target="1M4-gj-tcw" id="nsP-Jr-H6Y"/>
+                            </connections>
+                        </menuItem>
                         <menuItem isSeparatorItem="YES" id="Vu4-R2-vkK"/>
                         <menuItem title="Select Snippets File..." id="OF4-ba-bwP">
                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -105,12 +112,19 @@
                                 <action selector="selectSnippetsMenuItemClicked:" target="1M4-gj-tcw" id="Lbc-D5-gtj"/>
                             </connections>
                         </menuItem>
-                        <menuItem title="Auto-type Snippets on Copy" id="OaD-Ml-2fw">
+                        <menuItem title="New Snippets File..." id="jYN-Bm-UUS">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
-                                <action selector="typingEnabledMenuItemClicked:" target="1M4-gj-tcw" id="nsP-Jr-H6Y"/>
+                                <action selector="newSnippetsMenuItemClicked:" target="1M4-gj-tcw" id="Nwr-hU-VG8"/>
                             </connections>
                         </menuItem>
+                        <menuItem title="Edit Snippets..." id="eev-Vw-mYr">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="editSnippetsMenuItemClicked:" target="1M4-gj-tcw" id="pjR-7e-1pN"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="pFA-C1-vAC"/>
                         <menuItem title="Quit MonkeyDo" id="ObS-Cu-Guq">
                             <modifierMask key="keyEquivalentModifierMask"/>
                             <connections>
