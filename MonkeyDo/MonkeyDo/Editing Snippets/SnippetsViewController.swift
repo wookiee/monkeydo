@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SnippetsViewController.swift
 //  MonkeyDo
 //
 //  Created by Michael L. Ward on 8/4/17.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class SnippetsViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

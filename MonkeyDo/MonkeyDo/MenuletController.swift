@@ -18,14 +18,15 @@ class MenuletController: NSObject {
     var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
     let isDvorakEnabled = UserDefault(key: "isDvorakEnabled", value: true)
 
-    var snippets: [String] = []
+    let snippetStore = SnippetStore()
+    var snippets: [Snippet] = []
     var currentSnippetIndex = 0
+    
     let pasteboard = NSPasteboard.general
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var typeScript: NSAppleScript! = nil
     
-    var snippetsFileURL: URL?
-    var watcher: DirectoryObserver?
+    var watcher: FileObserver?
     
     override func awakeFromNib() {
         statusItem.title = "🐵"
@@ -73,7 +74,7 @@ class MenuletController: NSObject {
         panel.allowsMultipleSelection = false
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
-        panel.allowedFileTypes = ["public.text"]
+        panel.allowedFileTypes = ["public.text", "public.json"]
         panel.title = "Open Snippets"
         return panel
     }
@@ -82,39 +83,20 @@ class MenuletController: NSObject {
         let openPanel = makeOpenPanel()
         openPanel.runModal()
         guard let url = openPanel.urls.first else { return }
-        openSnippets(at: url) { (result) in
+        
+        snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
-                self.snippetsFileURL = nil
                 let alert = NSAlert(error: error)
                 alert.alertStyle = .critical
                 alert.runModal()
             case .success(let snippets):
                 self.snippets = snippets
                 self.currentSnippetIndex = 0
-                self.snippetsFileURL = url
-                let directoryURL = url.deletingLastPathComponent()
-                watcher = DirectoryObserver(directory: directoryURL)
-                watcher?.delegate = self
+                self.watcher = FileObserver(file: url)
+                self.watcher!.delegate = self
                 print("Loaded \(snippets.count) snippets.")
             }
-        }
-    }
-    
-    
-
-    func openSnippets(at url: URL, completion: (Result<[String]>)->Void) {
-        var result: Result<[String]>
-        defer { completion(result) }
-        do {
-            let blob = try String(contentsOf: url)
-            let strings = blob.components(separatedBy: "#####")
-            let trimmedStrings = strings.map {
-                return $0.trimmingCharacters(in: .whitespacesAndNewlines)
-            }
-            result = .success(trimmedStrings)
-        } catch {
-            result = .failure(error)
         }
     }
     
@@ -145,7 +127,7 @@ class MenuletController: NSObject {
     func typeNextSnippet() {
         print("Typing snippet at index \(currentSnippetIndex)")
         if currentSnippetIndex < snippets.count {
-            type(snippets[currentSnippetIndex])
+            type(snippets[currentSnippetIndex].body)
             currentSnippetIndex += 1
         } else {
             NSSound.beep()
@@ -180,17 +162,15 @@ class MenuletController: NSObject {
 
 }
 
-extension MenuletController: DirectoryObserverDelegate {
+extension MenuletController: FileObserverDelegate {
     
-    func directoryObserver(_ bdo: DirectoryObserver,
-                           didObserveFileSystemEvents events: [BNRFSEvent]) {
-        guard let snippetsFileURL = snippetsFileURL else { return }
-        let snippetsFilePath = snippetsFileURL.path
-        guard events.first?.path == snippetsFilePath else { return }
-        openSnippets(at: snippetsFileURL) { (result) in
+    func fileObserver(_ observer: FileObserver,
+                      didObserveFileSystemEvents events: [BNRFSEvent]) {
+        guard let path = events.first?.path else { return }
+        let url = URL(fileURLWithPath: path)
+        snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
-                self.snippetsFileURL = nil
                 let alert = NSAlert(error: error)
                 alert.messageText = "Your snippets file changed on disk, but the new snippets couldn't be imported.\n\nYour loaded snippets have been left unchanged."
                 alert.alertStyle = .critical

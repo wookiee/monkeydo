@@ -10,8 +10,14 @@
 		A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB31F3664A0001BA55E /* BNRFSEvent.m */; };
 		A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */; };
 		A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */; };
+		A631FEB21F461D9500849B28 /* Snippets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A631FEB11F461D9500849B28 /* Snippets.storyboard */; };
+		A631FEB51F461E3100849B28 /* SnippetsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */; };
+		A631FEB81F461E8800849B28 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEB71F461E8800849B28 /* Snippet.swift */; };
+		A631FEBC1F4620BE00849B28 /* SnippetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */; };
+		A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBD1F4624A400849B28 /* SnippetStore.swift */; };
+		A631FEC01F4636E000849B28 /* FileObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBF1F4636E000849B28 /* FileObserver.swift */; };
 		A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */; };
-		A6ADEECE1F34EC0200CE605E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECD1F34EC0200CE605E /* ViewController.swift */; };
+		A6ADEECE1F34EC0200CE605E /* SnippetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */; };
 		A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEECF1F34EC0200CE605E /* Assets.xcassets */; };
 		A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEED11F34EC0200CE605E /* Main.storyboard */; };
 		A6ADEEDF1F34EC0200CE605E /* MonkeyDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */; };
@@ -39,9 +45,15 @@
 		A60B4AB31F3664A0001BA55E /* BNRFSEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRFSEvent.m; sourceTree = "<group>"; };
 		A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSEventStream+SwiftBridging.m"; sourceTree = "<group>"; };
 		A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryObserver.swift; sourceTree = "<group>"; };
+		A631FEB11F461D9500849B28 /* Snippets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Snippets.storyboard; sourceTree = "<group>"; };
+		A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsWindowController.swift; sourceTree = "<group>"; };
+		A631FEB71F461E8800849B28 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
+		A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailViewController.swift; sourceTree = "<group>"; };
+		A631FEBD1F4624A400849B28 /* SnippetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetStore.swift; sourceTree = "<group>"; };
+		A631FEBF1F4636E000849B28 /* FileObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileObserver.swift; sourceTree = "<group>"; };
 		A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6ADEECD1F34EC0200CE605E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsViewController.swift; sourceTree = "<group>"; };
 		A6ADEECF1F34EC0200CE605E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6ADEED21F34EC0200CE605E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6ADEED41F34EC0200CE605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */,
+				A631FEBF1F4636E000849B28 /* FileObserver.swift */,
 				A60B4AB01F366491001BA55E /* FSEvents helpers */,
 			);
 			path = "Watching file changes";
@@ -126,6 +139,26 @@
 				A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */,
 			);
 			path = "FSEvents helpers";
+			sourceTree = "<group>";
+		};
+		A631FEB31F461DBB00849B28 /* Editing Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				A631FEB11F461D9500849B28 /* Snippets.storyboard */,
+				A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */,
+				A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */,
+				A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */,
+			);
+			path = "Editing Snippets";
+			sourceTree = "<group>";
+		};
+		A631FEB61F461E4700849B28 /* Snippets */ = {
+			isa = PBXGroup;
+			children = (
+				A631FEB71F461E8800849B28 /* Snippet.swift */,
+				A631FEBD1F4624A400849B28 /* SnippetStore.swift */,
+			);
+			path = Snippets;
 			sourceTree = "<group>";
 		};
 		A6ADEEBF1F34EC0200CE605E = {
@@ -152,7 +185,8 @@
 				A6ADEED11F34EC0200CE605E /* Main.storyboard */,
 				A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */,
 				A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */,
-				A6ADEECD1F34EC0200CE605E /* ViewController.swift */,
+				A631FEB61F461E4700849B28 /* Snippets */,
+				A631FEB31F461DBB00849B28 /* Editing Snippets */,
 				A60B4AAE1F366421001BA55E /* stdlib helpers */,
 				A60B4AAC1F3663E0001BA55E /* KeyCode helpers */,
 				A60B4AAF1F366474001BA55E /* Watching file changes */,
@@ -253,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A631FEB21F461D9500849B28 /* Snippets.storyboard in Resources */,
 				A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */,
 				A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */,
 				A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */,
@@ -291,13 +326,18 @@
 			files = (
 				A6BB3CAE1F356BDA00BEA498 /* CGKeyCodeHelpers.c in Sources */,
 				A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */,
-				A6ADEECE1F34EC0200CE605E /* ViewController.swift in Sources */,
+				A6ADEECE1F34EC0200CE605E /* SnippetsViewController.swift in Sources */,
+				A631FEB81F461E8800849B28 /* Snippet.swift in Sources */,
 				A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */,
+				A631FEC01F4636E000849B28 /* FileObserver.swift in Sources */,
 				A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */,
 				A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */,
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
+				A631FEBC1F4620BE00849B28 /* SnippetDetailViewController.swift in Sources */,
 				A6BB3CB01F356E8700BEA498 /* CGKeyCode+Helpers.swift in Sources */,
 				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
+				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
+				A631FEB51F461E3100849B28 /* SnippetsWindowController.swift in Sources */,
 				A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

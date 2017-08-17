@@ -8,8 +8,14 @@
 
 import Foundation
 
+extension String : Error {}
+
 enum Result<Content> {
     case success(Content)
     case failure(Error)
 }
 
+enum BooleanResult {
+    case success
+    case failure(Error)
+}
