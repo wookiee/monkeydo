@@ -8,31 +8,25 @@
 
 import Foundation
 
-struct Snippet: Codable {
-    let name: String
-    let body: String
-    let isEnabled: Bool
+class Snippet: NSObject, Codable {
+    var name: String
+    var body: String
+    var isEnabled: Bool
     
     init(name: String, body: String, isEnabled: Bool = true) {
         self.name = name
         self.body = body
         self.isEnabled = isEnabled
     }
-    
-    init(snippet: Snippet, name: String? = nil, body: String? = nil, isEnabled: Bool? = nil) {
-        self.name = name ?? snippet.name
-        self.body = body ?? snippet.body
-        self.isEnabled = isEnabled ?? snippet.isEnabled
-    }
 }
 
-extension Snippet: Equatable, Hashable {
+extension Snippet { // Equatable, Hashable
     
     static func ==(left: Snippet, right: Snippet) -> Bool {
         return left.name == right.name && left.body == right.body
     }
     
-    var hashValue: Int {
-        return body.hashValue
+    override var hashValue: Int {
+        return name.hashValue
     }
 }

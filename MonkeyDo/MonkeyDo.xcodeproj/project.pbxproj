@@ -11,9 +11,7 @@
 		A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */; };
 		A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */; };
 		A631FEB21F461D9500849B28 /* Snippets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A631FEB11F461D9500849B28 /* Snippets.storyboard */; };
-		A631FEB51F461E3100849B28 /* SnippetsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */; };
 		A631FEB81F461E8800849B28 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEB71F461E8800849B28 /* Snippet.swift */; };
-		A631FEBC1F4620BE00849B28 /* SnippetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */; };
 		A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBD1F4624A400849B28 /* SnippetStore.swift */; };
 		A631FEC01F4636E000849B28 /* FileObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBF1F4636E000849B28 /* FileObserver.swift */; };
 		A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */; };
@@ -44,9 +42,7 @@
 		A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSEventStream+SwiftBridging.m"; sourceTree = "<group>"; };
 		A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryObserver.swift; sourceTree = "<group>"; };
 		A631FEB11F461D9500849B28 /* Snippets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Snippets.storyboard; sourceTree = "<group>"; };
-		A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsWindowController.swift; sourceTree = "<group>"; };
 		A631FEB71F461E8800849B28 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
-		A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetDetailViewController.swift; sourceTree = "<group>"; };
 		A631FEBD1F4624A400849B28 /* SnippetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetStore.swift; sourceTree = "<group>"; };
 		A631FEBF1F4636E000849B28 /* FileObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileObserver.swift; sourceTree = "<group>"; };
 		A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,9 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A631FEB11F461D9500849B28 /* Snippets.storyboard */,
-				A631FEB41F461E3100849B28 /* SnippetsWindowController.swift */,
 				A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */,
-				A631FEBB1F4620BE00849B28 /* SnippetDetailViewController.swift */,
 			);
 			path = "Editing Snippets";
 			sourceTree = "<group>";
@@ -316,10 +310,8 @@
 				A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */,
 				A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */,
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
-				A631FEBC1F4620BE00849B28 /* SnippetDetailViewController.swift in Sources */,
 				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
 				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
-				A631FEB51F461E3100849B28 /* SnippetsWindowController.swift in Sources */,
 				A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

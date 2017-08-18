@@ -131,15 +131,22 @@ class MenuletController: NSObject {
         }
     }
     
-    lazy var snippetEditor: SnippetsWindowController = {
+    lazy var snippetsWC: NSWindowController = {
         let storyboard = NSStoryboard(name: NSStoryboard.Name("Snippets"), bundle: nil)
-        let snippetsWC = storyboard.instantiateInitialController() as! SnippetsWindowController
+        let snippetsWC = storyboard.instantiateInitialController() as! NSWindowController
+        let snippetsVC = snippetsWC.contentViewController as! SnippetsViewController
+        snippetsWC.window?.contentView = snippetsVC.view
+        snippetsVC.snippetStore = snippetStore
         return snippetsWC
     }()
     
+    var snippetsVC: SnippetsViewController {
+        return snippetsWC.contentViewController as! SnippetsViewController
+    }
+    
     func showSnippetEditor() {
-        snippetEditor.snippetStore = snippetStore
-        snippetEditor.showWindow(nil)
+        snippetsWC.showWindow(self)
+        print(snippetsWC.window)
     }
     
     // MARK: - Receiving Keyboard Shortcuts
@@ -148,14 +155,12 @@ class MenuletController: NSObject {
         let opts = NSDictionary(object: kCFBooleanTrue,
                                 forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionary
         guard AXIsProcessTrustedWithOptions(opts) == true else { return }
-        
-        let keyCode = kVK_ANSI_Semicolon
-        
+
         if let eventMonitor = eventMonitor {
             NSEvent.removeMonitor(eventMonitor)
         }
         eventMonitor = NSEvent.addGlobalMonitorForEvents(matching: .keyDown) { (event) in
-            guard event.keyCode == keyCode else { return }
+            guard event.keyCode == kVK_ANSI_Semicolon else { return }
             let desiredFlags: NSEvent.ModifierFlags = [.control, .option, .command]
             let desiredMask: UInt = 1835305
             guard event.modifierFlags.rawValue == desiredMask

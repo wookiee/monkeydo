@@ -10,18 +10,13 @@ import Cocoa
 
 class SnippetsViewController: NSViewController {
 
+    @objc dynamic var snippetStore: SnippetStore!
+    
+    @IBOutlet var tableView: NSTableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
+    
 }
 

@@ -8,14 +8,15 @@
 
 import Foundation
 
-class SnippetStore {
+class SnippetStore: NSObject {
     
     private var currentSnippetIndex = 0 {
         didSet {
             precondition(currentSnippetIndex < snippets.count, "Illegal: cannot set currentSnippetIndex to \(currentSnippetIndex); there are \(snippets.count) snippets.")
         }
     }
-    private(set) var snippets: [Snippet] = [] {
+    
+    @objc dynamic var snippets: [Snippet] = [] { // @objc dynamic for Bindings support
         didSet {
             if currentSnippetIndex >= snippets.count { currentSnippetIndex = 0 }
         }
@@ -34,13 +35,15 @@ class SnippetStore {
     
     // MARK: - Managing Snippets File
     
-    func load(from url: URL, andThenUpon completionQueue: OperationQueue, execute completion: @escaping (Result<[Snippet]>)->Void) {
+    func load(from url: URL,
+              andThenUpon completionQueue: OperationQueue = OperationQueue.main,
+              execute completion: ((Result<[Snippet]>)->Void)? = nil) {
         queue.addOperation {
             var result: Result<[Snippet]>
             
             defer {
                 completionQueue.addOperation {
-                    completion(result)
+                    completion?(result)
                 }
             }
             
@@ -55,11 +58,12 @@ class SnippetStore {
         }
     }
     
-    func save(andThenUpon completionQueue: OperationQueue, execute completion: @escaping (BooleanResult)->Void) {
+    func save(andThenUpon completionQueue: OperationQueue = OperationQueue.main,
+              execute completion: ((BooleanResult)->Void)? = nil) {
         queue.addOperation {
-            let savedSuccessfully = self.save()
+            let savedSuccessfully = self.syncSave()
             completionQueue.addOperation {
-                completion(savedSuccessfully)
+                completion?(savedSuccessfully)
             }
         }
     }
@@ -68,14 +72,14 @@ class SnippetStore {
         queue.addOperation {
             self.storeURL = url
             self.snippets = [Snippet(name: "Sample", body: "this is a sample snippet!")]
-            let savedSuccessfully = self.save()
+            let savedSuccessfully = self.syncSave()
             completionQueue.addOperation {
                 completion(savedSuccessfully)
             }
         }
     }
     
-    private func save() -> BooleanResult {
+    private func syncSave() -> BooleanResult {
         guard let storeURL = storeURL else {
             fatalError("Attempt to save with nil storeURL!")
         }
