@@ -466,6 +466,7 @@
 				DEVELOPMENT_TEAM = VMY8R4T742;
 				INFOPLIST_FILE = MonkeyDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonkeyDo/MonkeyDo-Bridging-Header.h";
@@ -484,6 +485,7 @@
 				DEVELOPMENT_TEAM = VMY8R4T742;
 				INFOPLIST_FILE = MonkeyDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MonkeyDo/MonkeyDo-Bridging-Header.h";

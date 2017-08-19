@@ -19,6 +19,12 @@ class SnippetsViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bodyTextView.isAutomaticDataDetectionEnabled = false
+        bodyTextView.isAutomaticTextCompletionEnabled = false
+        bodyTextView.isAutomaticLinkDetectionEnabled = false
+        bodyTextView.isAutomaticDashSubstitutionEnabled = false
+        bodyTextView.isAutomaticQuoteSubstitutionEnabled = false
+        bodyTextView.isAutomaticSpellingCorrectionEnabled = false
         tableView.registerForDraggedTypes([NSPasteboard.PasteboardType("public.data")])
     }
     
