@@ -40,20 +40,20 @@ class SnippetStore: NSObject {
               execute completion: ((Result<[Snippet]>)->Void)? = nil) {
         queue.addOperation {
             var result: Result<[Snippet]>
-            
-            defer {
-                completionQueue.addOperation {
-                    completion?(result)
-                }
-            }
-            
             do {
                 let snippetData = try Data(contentsOf: url, options: [])
-                self.snippets = try self.decoder.decode(Array<Snippet>.self, from: snippetData)
-                self.storeURL = url
-                result = .success(self.snippets)
+                let snippets = try self.decoder.decode(Array<Snippet>.self, from: snippetData)
+                OperationQueue.main.addOperation {
+                    self.snippets = snippets
+                    self.storeURL = url
+                }
+                result = .success(snippets)
             } catch {
                 result = .failure(error)
+            }
+            
+            completionQueue.addOperation {
+                completion?(result)
             }
         }
     }
@@ -69,9 +69,9 @@ class SnippetStore: NSObject {
     }
     
     func createNew(at url: URL, andThenUpon completionQueue: OperationQueue, execute completion: @escaping (BooleanResult)->Void) {
+        self.storeURL = url
+        self.snippets = [Snippet(name: "Sample", body: "this is a sample snippet!")]
         queue.addOperation {
-            self.storeURL = url
-            self.snippets = [Snippet(name: "Sample", body: "this is a sample snippet!")]
             let savedSuccessfully = self.syncSave()
             completionQueue.addOperation {
                 completion(savedSuccessfully)

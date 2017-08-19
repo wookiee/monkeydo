@@ -12,10 +12,13 @@ class SnippetsViewController: NSViewController {
 
     @objc dynamic var snippetStore: SnippetStore!
     
-    @IBOutlet var tableView: NSTableView!
+    @IBOutlet var arrayController: NSArrayController!
+    @IBOutlet var nameField: NSTextField!
+    @IBOutlet var bodyTextView: NSTextView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillDisappear() {
+        NSApp.keyWindow?.makeFirstResponder(nil)
+        snippetStore.save()
     }
     
 }

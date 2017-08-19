@@ -45,6 +45,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="add:" target="l7k-A7-Kyc" id="EIi-sz-Oaf"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-0t-Dy0" userLabel="Remove Button">
                                 <rect key="frame" x="64" y="13" width="49" height="32"/>
@@ -53,6 +56,9 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <accessibility description="Remove Button"/>
+                                <connections>
+                                    <action selector="remove:" target="l7k-A7-Kyc" id="3ks-aE-ys6"/>
+                                </connections>
                             </button>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKo-oO-7Oe" userLabel="Table Scroll View">
                                 <rect key="frame" x="20" y="48" width="175" height="232"/>
@@ -80,7 +86,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="SnippetCellIdentifier" id="cbI-Y0-7jy">
+                                                        <tableCellView id="cbI-Y0-7jy">
                                                             <rect key="frame" x="1" y="1" width="170" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -91,7 +97,7 @@
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
                                                                     <connections>
-                                                                        <action selector="checkButtonChecked:" target="cbI-Y0-7jy" id="MN6-OB-swh"/>
+                                                                        <binding destination="cbI-Y0-7jy" name="value" keyPath="objectValue.isEnabled" id="iL6-sL-CbW"/>
                                                                     </connections>
                                                                 </button>
                                                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hcK-Y4-8FN">
@@ -101,6 +107,9 @@
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
+                                                                    <connections>
+                                                                        <binding destination="cbI-Y0-7jy" name="value" keyPath="objectValue.name" id="aA7-6D-yS7"/>
+                                                                    </connections>
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
@@ -112,14 +121,14 @@
                                                                 <constraint firstItem="hcK-Y4-8FN" firstAttribute="leading" secondItem="GlM-C9-d94" secondAttribute="trailing" constant="10" id="gHx-d7-axw"/>
                                                                 <constraint firstItem="GlM-C9-d94" firstAttribute="leading" secondItem="cbI-Y0-7jy" secondAttribute="leading" constant="8" id="uWU-H5-MFT"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="checkButton" destination="GlM-C9-d94" id="yKV-cW-aYT"/>
-                                                                <outlet property="nameField" destination="hcK-Y4-8FN" id="WEV-h5-84o"/>
-                                                            </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <binding destination="l7k-A7-Kyc" name="content" keyPath="arrangedObjects.self" id="Pqu-pv-YX7"/>
+                                                <binding destination="l7k-A7-Kyc" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="Pqu-pv-YX7" id="PfS-2m-5fk"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
@@ -142,13 +151,24 @@
                                     <rect key="frame" x="1" y="1" width="383" height="230"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="GHP-DA-M0A">
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" smartInsertDelete="YES" id="GHP-DA-M0A">
                                             <rect key="frame" x="0.0" y="0.0" width="383" height="230"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="minSize" width="383" height="230"/>
                                             <size key="maxSize" width="769" height="10000000"/>
+                                            <attributedString key="textStorage">
+                                                <fragment content="this is placeholder text">
+                                                    <attributes>
+                                                        <font key="NSFont" size="12" name="Menlo-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <binding destination="l7k-A7-Kyc" name="value" keyPath="selection.body" id="WKH-On-8xb"/>
+                                            </connections>
                                         </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,15 +183,18 @@
                                 </scroller>
                             </scrollView>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="98o-jw-XMU" userLabel="Name Field">
-                                <rect key="frame" x="255" y="20" width="348" height="20"/>
+                                <rect key="frame" x="255" y="18" width="348" height="22"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="chh-7P-IA9">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="l7k-A7-Kyc" name="value" keyPath="selection.name" id="VM7-Z8-yc6"/>
+                                </connections>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-aS-igC" userLabel="Name Label">
-                                <rect key="frame" x="201" y="23" width="44" height="17"/>
+                                <rect key="frame" x="201" y="21" width="44" height="17"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="xNQ-Ih-tPK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -186,12 +209,12 @@
                             <constraint firstItem="aRr-xL-oao" firstAttribute="leading" secondItem="gT1-IZ-IFo" secondAttribute="leading" id="AT4-dY-v3U"/>
                             <constraint firstItem="98o-jw-XMU" firstAttribute="baseline" secondItem="Ymp-aS-igC" secondAttribute="baseline" id="DYO-ay-NVp"/>
                             <constraint firstItem="Ymp-aS-igC" firstAttribute="leading" secondItem="ZO1-3y-swu" secondAttribute="leading" id="E9K-mw-f2G"/>
-                            <constraint firstAttribute="bottom" secondItem="98o-jw-XMU" secondAttribute="bottom" constant="20" id="G7e-BS-Vit"/>
                             <constraint firstItem="ZO1-3y-swu" firstAttribute="leading" secondItem="FKo-oO-7Oe" secondAttribute="trailing" constant="8" id="GCE-fM-8aq"/>
                             <constraint firstItem="FKo-oO-7Oe" firstAttribute="top" secondItem="tX3-3E-RSF" secondAttribute="top" constant="20" id="Gxm-Pc-h4h"/>
                             <constraint firstItem="98o-jw-XMU" firstAttribute="top" secondItem="ZO1-3y-swu" secondAttribute="bottom" constant="8" id="PkA-99-Knc"/>
                             <constraint firstItem="FKo-oO-7Oe" firstAttribute="leading" secondItem="tX3-3E-RSF" secondAttribute="leading" constant="20" id="RcA-LJ-gK3"/>
                             <constraint firstItem="ga2-0t-Dy0" firstAttribute="leading" secondItem="aRr-xL-oao" secondAttribute="trailing" constant="12" id="RgY-S2-Rjs"/>
+                            <constraint firstAttribute="bottom" secondItem="98o-jw-XMU" secondAttribute="bottom" constant="18" id="S0W-Vn-lzU"/>
                             <constraint firstAttribute="trailing" secondItem="ZO1-3y-swu" secondAttribute="trailing" constant="20" id="Tyi-py-IeD"/>
                             <constraint firstItem="FKo-oO-7Oe" firstAttribute="bottom" secondItem="ZO1-3y-swu" secondAttribute="bottom" id="UXm-66-nSF"/>
                             <constraint firstItem="aRr-xL-oao" firstAttribute="top" secondItem="gT1-IZ-IFo" secondAttribute="bottom" constant="8" id="ZoE-FG-ZCE"/>
@@ -201,10 +224,20 @@
                             <constraint firstItem="FKo-oO-7Oe" firstAttribute="top" secondItem="ZO1-3y-swu" secondAttribute="top" id="pME-HT-4aT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arrayController" destination="l7k-A7-Kyc" id="aWy-ua-RCO"/>
+                        <outlet property="bodyTextView" destination="GHP-DA-M0A" id="wZT-P1-f8g"/>
+                        <outlet property="nameField" destination="98o-jw-XMU" id="mMZ-Ra-T30"/>
+                    </connections>
                 </viewController>
                 <customObject id="rA7-EG-T4K" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController objectClassName="MonkeyDo.Snippet" id="l7k-A7-Kyc">
+                    <connections>
+                        <binding destination="EWm-wY-1VD" name="contentArray" keyPath="self.snippetStore.snippets" id="WgX-8g-C5v"/>
+                    </connections>
+                </arrayController>
             </objects>
-            <point key="canvasLocation" x="327" y="520"/>
+            <point key="canvasLocation" x="326.5" y="520"/>
         </scene>
     </scenes>
 </document>

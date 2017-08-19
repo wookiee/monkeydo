@@ -9,11 +9,17 @@
 import Foundation
 
 class Snippet: NSObject, Codable {
-    var name: String
-    var body: String
-    var isEnabled: Bool
+    @objc dynamic var name: String = ""
+    @objc dynamic var body: String = ""
+    @objc dynamic var isEnabled: Bool = false
     
-    init(name: String, body: String, isEnabled: Bool = true) {
+    @objc dynamic override init() {
+        name = ""
+        body = ""
+        isEnabled = false
+    }
+    
+    @objc dynamic init(name: String, body: String, isEnabled: Bool = true) {
         self.name = name
         self.body = body
         self.isEnabled = isEnabled
