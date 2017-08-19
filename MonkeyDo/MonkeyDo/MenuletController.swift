@@ -16,6 +16,7 @@ class MenuletController: NSObject {
     @IBOutlet weak var nextSnippetMenuItem: NSMenuItem!
     @IBOutlet weak var typingEnabledMenuItem: NSMenuItem!
     @IBOutlet weak var editSnippetsMenuItem: NSMenuItem!
+    
     var isTypingEnabled = UserDefault(key: "isTypingEnabled", value: true)
 
     let snippetStore = SnippetStore()
