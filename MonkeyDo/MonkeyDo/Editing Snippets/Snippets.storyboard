@@ -128,6 +128,8 @@
                                             <connections>
                                                 <binding destination="l7k-A7-Kyc" name="content" keyPath="arrangedObjects.self" id="Pqu-pv-YX7"/>
                                                 <binding destination="l7k-A7-Kyc" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="Pqu-pv-YX7" id="PfS-2m-5fk"/>
+                                                <outlet property="dataSource" destination="EWm-wY-1VD" id="V3t-jj-xir"/>
+                                                <outlet property="delegate" destination="EWm-wY-1VD" id="fyL-Df-MZj"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
@@ -228,6 +230,7 @@
                         <outlet property="arrayController" destination="l7k-A7-Kyc" id="aWy-ua-RCO"/>
                         <outlet property="bodyTextView" destination="GHP-DA-M0A" id="wZT-P1-f8g"/>
                         <outlet property="nameField" destination="98o-jw-XMU" id="mMZ-Ra-T30"/>
+                        <outlet property="tableView" destination="gT1-IZ-IFo" id="gjN-Or-LjJ"/>
                     </connections>
                 </viewController>
                 <customObject id="rA7-EG-T4K" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
