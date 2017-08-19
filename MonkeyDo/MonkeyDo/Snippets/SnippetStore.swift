@@ -10,15 +10,11 @@ import Foundation
 
 class SnippetStore: NSObject {
     
-    private var currentSnippetIndex = 0 {
-        didSet {
-            precondition(currentSnippetIndex < snippets.count, "Illegal: cannot set currentSnippetIndex to \(currentSnippetIndex); there are \(snippets.count) snippets.")
-        }
-    }
+    private var nextSnippetIndex = 0
     
     @objc dynamic var snippets: [Snippet] = [] { // @objc dynamic for Bindings support
         didSet {
-            if currentSnippetIndex >= snippets.count { currentSnippetIndex = 0 }
+            if nextSnippetIndex >= snippets.count { nextSnippetIndex = 0 }
         }
     }
 
@@ -32,7 +28,7 @@ class SnippetStore: NSObject {
         q.maxConcurrentOperationCount = 1
         return q
     }()
-    
+
     // MARK: - Managing Snippets File
     
     func load(from url: URL,
@@ -93,17 +89,17 @@ class SnippetStore: NSObject {
             return BooleanResult.failure(error)
         }
     }
-    
+
     // MARK: - Reporting Snippets
     
     func next() -> Snippet? {
-        guard currentSnippetIndex < snippets.count else { return nil }
-        let nextSnippet = snippets[currentSnippetIndex]
-        currentSnippetIndex += 1
-        return nextSnippet
+        guard nextSnippetIndex < snippets.count else { return nil }
+        guard let snippet = snippets.suffix(from: nextSnippetIndex).first(where: {$0.isEnabled}) else { return nil }
+        nextSnippetIndex = snippets.index(of: snippet)! + 1
+        return snippet
     }
     
     func reset() {
-        currentSnippetIndex = 0
+        nextSnippetIndex = 0
     }
 }
