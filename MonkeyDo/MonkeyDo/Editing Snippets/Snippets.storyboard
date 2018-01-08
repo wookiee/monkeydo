@@ -236,6 +236,7 @@
                 <customObject id="rA7-EG-T4K" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController objectClassName="MonkeyDo.Snippet" id="l7k-A7-Kyc">
                     <connections>
+                        <binding destination="EWm-wY-1VD" name="selectionIndexes" keyPath="self.snippetStore.selectionIndexes" id="x1u-yh-s5h"/>
                         <binding destination="EWm-wY-1VD" name="contentArray" keyPath="self.snippetStore.snippets" id="WgX-8g-C5v"/>
                     </connections>
                 </arrayController>

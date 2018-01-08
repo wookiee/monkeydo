@@ -9,8 +9,24 @@
 import Foundation
 
 class SnippetStore: NSObject {
-    
-    private var nextSnippetIndex = 0
+
+    private var nextSnippetIndex = 0 {
+        didSet {
+            if nextSnippetIndex != oldValue {
+                selectionIndexes = IndexSet(integer: nextSnippetIndex)
+            }
+        }
+    }
+    @objc dynamic var selectionIndexes: IndexSet {
+        set {
+            precondition(newValue.count <= 1, "Multiple selection should be illegal here")
+            guard newValue.count == 1 else { return } // don't update model selection
+            nextSnippetIndex = newValue.first!
+        }
+        get {
+            return IndexSet(integer: nextSnippetIndex)
+        }
+    }
     
     @objc dynamic var snippets: [Snippet] = [] { // @objc dynamic for Bindings support
         didSet {
