@@ -25,6 +25,7 @@
 		A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEED1F34F5CB00CE605E /* Result.swift */; };
 		A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */; };
 		A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */ = {isa = PBXBuildFile; fileRef = A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */; };
+		A6C85A952003D0D300EA76CE /* SnippetsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonkeyDo-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypePasteboard.scpt; sourceTree = "<group>"; };
+		A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				A631FEB11F461D9500849B28 /* Snippets.storyboard */,
+				A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */,
 				A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */,
 			);
 			path = "Editing Snippets";
@@ -317,6 +320,7 @@
 				A69C62DB1F48D8EB00B5DF4E /* Array+Convenience.swift in Sources */,
 				A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */,
 				A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */,
+				A6C85A952003D0D300EA76CE /* SnippetsWindow.swift in Sources */,
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
 				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
 				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
