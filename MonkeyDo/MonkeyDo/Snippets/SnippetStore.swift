@@ -12,9 +12,8 @@ class SnippetStore: NSObject {
 
     private var nextSnippetIndex = 0 {
         didSet {
-            if nextSnippetIndex != oldValue {
-                selectionIndexes = IndexSet(integer: nextSnippetIndex)
-            }
+            guard nextSnippetIndex != oldValue else { return }
+            selectionIndexes = IndexSet(integer: nextSnippetIndex)
         }
     }
     @objc dynamic var selectionIndexes: IndexSet {
@@ -31,6 +30,7 @@ class SnippetStore: NSObject {
     @objc dynamic var snippets: [Snippet] = [] { // @objc dynamic for Bindings support
         didSet {
             if nextSnippetIndex >= snippets.count { nextSnippetIndex = 0 }
+            save()
         }
     }
 
