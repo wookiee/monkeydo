@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AppKit
 
 class SnippetStore: NSObject {
 
@@ -54,6 +55,12 @@ class SnippetStore: NSObject {
             var result: Result<[Snippet]>
             do {
                 let snippetData = try Data(contentsOf: url, options: [])
+                
+                if let oldSnippetData = try? self.encoder.encode(self.snippets) {
+                    // Don't reload if the data hasn't changed
+                    if snippetData == oldSnippetData { return }
+                }
+                
                 let snippets = try self.decoder.decode(Array<Snippet>.self, from: snippetData)
                 OperationQueue.main.addOperation {
                     self.snippets = snippets
