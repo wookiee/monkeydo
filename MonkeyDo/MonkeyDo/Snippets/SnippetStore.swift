@@ -37,9 +37,13 @@ class SnippetStore: NSObject {
 
     private(set) var storeURL: URL?
     
-    private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
-    
+    private let encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        return encoder
+    }()
+
     private let queue: OperationQueue = {
         let q = OperationQueue()
         q.maxConcurrentOperationCount = 1
