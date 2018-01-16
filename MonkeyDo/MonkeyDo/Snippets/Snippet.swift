@@ -9,14 +9,12 @@
 import Foundation
 
 class Snippet: NSObject, Codable {
-    @objc dynamic var name: String = ""
+    @objc dynamic var name: String = "Snippet"
     @objc dynamic var body: String = ""
     @objc dynamic var isEnabled: Bool = true
     
     @objc dynamic override init() {
-        name = ""
-        body = ""
-        isEnabled = false
+
     }
     
     @objc dynamic init(name: String, body: String, isEnabled: Bool = true) {
