@@ -39,7 +39,10 @@ extension SnippetsViewController: NSTableViewDataSource, NSTableViewDelegate {
     
     // from https://gist.github.com/sooop/3c964900d429516ba48bd75050d0de0a
     
-    func tableView(_ tableView: NSTableView, writeRowsWith rowIndexes: IndexSet, to pboard: NSPasteboard) -> Bool {
+    func tableView(_ tableView: NSTableView,
+                   writeRowsWith rowIndexes: IndexSet,
+                   to pboard: NSPasteboard) -> Bool {
+        
         let data = NSKeyedArchiver.archivedData(withRootObject: rowIndexes)
         let item = NSPasteboardItem()
         item.setData(data, forType: NSPasteboard.PasteboardType(rawValue: "public.data"))
@@ -47,7 +50,10 @@ extension SnippetsViewController: NSTableViewDataSource, NSTableViewDelegate {
         return true
     }
     
-    func tableView(_ tableView: NSTableView, validateDrop info: NSDraggingInfo, proposedRow row: Int, proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
+    func tableView(_ tableView: NSTableView,
+                   validateDrop info: NSDraggingInfo,
+                   proposedRow row: Int,
+                   proposedDropOperation dropOperation: NSTableView.DropOperation) -> NSDragOperation {
         
         guard let source = info.draggingSource() as? NSTableView,
             source === tableView
@@ -60,7 +66,11 @@ extension SnippetsViewController: NSTableViewDataSource, NSTableViewDelegate {
     }
     
     
-    func tableView(_ tableView: NSTableView, acceptDrop info: NSDraggingInfo, row: Int, dropOperation: NSTableView.DropOperation) -> Bool {
+    func tableView(_ tableView: NSTableView,
+                   acceptDrop info: NSDraggingInfo,
+                   row: Int,
+                   dropOperation: NSTableView.DropOperation) -> Bool {
+        
         let pb = info.draggingPasteboard()
         if let itemData = pb.pasteboardItems?.first?.data(forType: NSPasteboard.PasteboardType(rawValue: "public.data")),
             let indexes = NSKeyedUnarchiver.unarchiveObject(with: itemData) as? IndexSet
