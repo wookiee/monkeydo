@@ -46,7 +46,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="add:" target="4ff-2L-1he" id="jFm-go-voD"/>
+                                    <action selector="add:" target="4ff-2L-1he" id="PXY-RZ-CLb"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zos-kj-UcT" userLabel="Remove Button">
