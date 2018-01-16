@@ -103,7 +103,9 @@ class MenuletController: NSObject {
             guard response == NSApplication.ModalResponse.OK, let url = openPanel.urls.first else { return }
             self.loadSnippets(at: url)
         }
+        NSApp.activate(ignoringOtherApps: true)
         openPanel.makeKeyAndOrderFront(self)
+        openPanel.orderFrontRegardless()
     }
     
     func newSnippetsFile() {
@@ -115,7 +117,9 @@ class MenuletController: NSObject {
                 self.loadSnippets(at: url)
             })
         }
+        NSApp.activate(ignoringOtherApps: true)
         savePanel.makeKeyAndOrderFront(self)
+        savePanel.orderFrontRegardless()
     }
     
     func loadSnippets(at url: URL) {
@@ -148,8 +152,10 @@ class MenuletController: NSObject {
     }
     
     func showSnippetEditor() {
+        NSApp.activate(ignoringOtherApps: true)
         snippetsWC.showWindow(self)
         snippetsWC.window?.makeKeyAndOrderFront(self)
+        snippetsWC.window?.orderFrontRegardless()
     }
     
     // MARK: - Receiving Keyboard Shortcuts

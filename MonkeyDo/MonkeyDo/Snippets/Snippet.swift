@@ -9,14 +9,12 @@
 import Foundation
 
 class Snippet: NSObject, Codable {
-    @objc dynamic var name: String = ""
+    @objc dynamic var name: String = "Snippet"
     @objc dynamic var body: String = ""
     @objc dynamic var isEnabled: Bool = true
     
     @objc dynamic override init() {
-        name = ""
-        body = ""
-        isEnabled = false
+
     }
     
     @objc dynamic init(name: String, body: String, isEnabled: Bool = true) {
@@ -32,7 +30,17 @@ extension Snippet { // Equatable, Hashable
         return left.name == right.name && left.body == right.body
     }
     
+    override func isEqual(to other: Any?) -> Bool {
+        guard let other = other as? Snippet else { return false }
+        if self === other { return true }
+        return self.name == other.name && self.body == other.body
+    }
+    
     override var hashValue: Int {
         return name.hashValue
+    }
+    
+    override var hash: Int {
+        return name.hash
     }
 }
