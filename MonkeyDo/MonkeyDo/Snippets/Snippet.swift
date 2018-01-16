@@ -30,7 +30,17 @@ extension Snippet { // Equatable, Hashable
         return left.name == right.name && left.body == right.body
     }
     
+    override func isEqual(to other: Any?) -> Bool {
+        guard let other = other as? Snippet else { return false }
+        if self === other { return true }
+        return self.name == other.name && self.body == other.body
+    }
+    
     override var hashValue: Int {
         return name.hashValue
+    }
+    
+    override var hash: Int {
+        return name.hash
     }
 }
