@@ -8,7 +8,9 @@
 
 import Foundation
 
-// from https://gist.github.com/sooop/3c964900d429516ba48bd75050d0de0a
+// Array re-ordering conveniences
+// https://gist.github.com/wookiee/e25baec42816b129290c4c7123cdad2a
+// forked from GitHub user `sooop`
 
 extension Array {
     
