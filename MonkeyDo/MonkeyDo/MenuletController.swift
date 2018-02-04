@@ -102,7 +102,10 @@ class MenuletController: NSObject {
         NSApp.activate(ignoringOtherApps: true)
         openPanel.begin { (response) in
             guard response == NSApplication.ModalResponse.OK, let url = openPanel.urls.first else { return }
-            self.loadSnippets(at: url)
+            self.loadSnippets(at: url, andThen: { (result) in
+                guard result == .success else { return }
+                self.showSnippetEditor()
+            })
         }
     }
     
@@ -113,22 +116,28 @@ class MenuletController: NSObject {
             guard response == NSApplication.ModalResponse.OK, let url = savePanel.url else { return }
             self.snippetStore.createNew(at: url, andThenUpon: OperationQueue.main, execute: { (result) in
                 guard result == BooleanResult.success else { return }
-                self.loadSnippets(at: url)
+                self.loadSnippets(at: url, andThen: { (result) in
+                    guard result == .success else { return }
+                    self.showSnippetEditor()
+                })
             })
         }
     }
     
-    func loadSnippets(at url: URL) {
+    func loadSnippets(at url: URL,
+                      andThen completion: ((BooleanResult)->Void)?) {
         snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
                 let alert = NSAlert(error: error)
                 alert.alertStyle = .critical
                 alert.runModal()
+                completion?(BooleanResult.failure(error))
             case .success(let snippets):
                 self.snippetStore.reset()
                 self.watcher = FileObserver(file: url)
                 self.watcher!.delegate = self
+                completion?(BooleanResult.success)
                 print("Loaded \(snippets.count) snippets.")
             }
         }
