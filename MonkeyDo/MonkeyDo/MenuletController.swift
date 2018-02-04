@@ -99,17 +99,16 @@ class MenuletController: NSObject {
     
     func selectSnippetsFile() {
         let openPanel = makeOpenPanel()
+        NSApp.activate(ignoringOtherApps: true)
         openPanel.begin { (response) in
             guard response == NSApplication.ModalResponse.OK, let url = openPanel.urls.first else { return }
             self.loadSnippets(at: url)
         }
-        NSApp.activate(ignoringOtherApps: true)
-        openPanel.makeKeyAndOrderFront(self)
-        openPanel.orderFrontRegardless()
     }
     
     func newSnippetsFile() {
         let savePanel = makeSavePanel()
+        NSApp.activate(ignoringOtherApps: true)
         savePanel.begin { (response) in
             guard response == NSApplication.ModalResponse.OK, let url = savePanel.url else { return }
             self.snippetStore.createNew(at: url, andThenUpon: OperationQueue.main, execute: { (result) in
@@ -117,9 +116,6 @@ class MenuletController: NSObject {
                 self.loadSnippets(at: url)
             })
         }
-        NSApp.activate(ignoringOtherApps: true)
-        savePanel.makeKeyAndOrderFront(self)
-        savePanel.orderFrontRegardless()
     }
     
     func loadSnippets(at url: URL) {
