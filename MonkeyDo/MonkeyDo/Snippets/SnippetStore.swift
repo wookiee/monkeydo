@@ -67,8 +67,8 @@ class SnippetStore: NSObject {
                 
                 let snippets = try self.decoder.decode(Array<Snippet>.self, from: snippetData)
                 OperationQueue.main.addOperation {
-                    self.snippets = snippets
                     self.storeURL = url
+                    self.snippets = snippets
                 }
                 result = .success(snippets)
             } catch {
