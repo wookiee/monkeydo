@@ -7,13 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB31F3664A0001BA55E /* BNRFSEvent.m */; };
-		A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */; };
-		A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */; };
 		A631FEB21F461D9500849B28 /* Snippets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A631FEB11F461D9500849B28 /* Snippets.storyboard */; };
 		A631FEB81F461E8800849B28 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEB71F461E8800849B28 /* Snippet.swift */; };
 		A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBD1F4624A400849B28 /* SnippetStore.swift */; };
-		A631FEC01F4636E000849B28 /* FileObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A631FEBF1F4636E000849B28 /* FileObserver.swift */; };
 		A69C62DB1F48D8EB00B5DF4E /* Array+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C62DA1F48D8EB00B5DF4E /* Array+Convenience.swift */; };
 		A69C62DF1F4900EF00B5DF4E /* HeadlessApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69C62DE1F4900EF00B5DF4E /* HeadlessApplication.swift */; };
 		A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECB1F34EC0200CE605E /* AppDelegate.swift */; };
@@ -43,15 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A60B4AB11F3664A0001BA55E /* BNRFSEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRFSEvent.h; sourceTree = "<group>"; };
-		A60B4AB21F3664A0001BA55E /* FSEventStream+SwiftBridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSEventStream+SwiftBridging.h"; sourceTree = "<group>"; };
-		A60B4AB31F3664A0001BA55E /* BNRFSEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRFSEvent.m; sourceTree = "<group>"; };
-		A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSEventStream+SwiftBridging.m"; sourceTree = "<group>"; };
-		A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryObserver.swift; sourceTree = "<group>"; };
 		A631FEB11F461D9500849B28 /* Snippets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Snippets.storyboard; sourceTree = "<group>"; };
 		A631FEB71F461E8800849B28 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 		A631FEBD1F4624A400849B28 /* SnippetStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetStore.swift; sourceTree = "<group>"; };
-		A631FEBF1F4636E000849B28 /* FileObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileObserver.swift; sourceTree = "<group>"; };
 		A69C62DA1F48D8EB00B5DF4E /* Array+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Convenience.swift"; sourceTree = "<group>"; };
 		A69C62DE1F4900EF00B5DF4E /* HeadlessApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HeadlessApplication.swift; path = MonkeyDo/HeadlessApplication.swift; sourceTree = SOURCE_ROOT; };
 		A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonkeyDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,24 +111,10 @@
 		A60B4AAF1F366474001BA55E /* Watching file changes */ = {
 			isa = PBXGroup;
 			children = (
-				A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */,
-				A631FEBF1F4636E000849B28 /* FileObserver.swift */,
-				A60B4AB01F366491001BA55E /* FSEvents helpers */,
 				A6BB6C812028E18700B70375 /* FileSystemEvent.swift */,
 				A6BB6C852028EAF800B70375 /* FileSystemObserver.swift */,
 			);
 			path = "Watching file changes";
-			sourceTree = "<group>";
-		};
-		A60B4AB01F366491001BA55E /* FSEvents helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A60B4AB11F3664A0001BA55E /* BNRFSEvent.h */,
-				A60B4AB31F3664A0001BA55E /* BNRFSEvent.m */,
-				A60B4AB21F3664A0001BA55E /* FSEventStream+SwiftBridging.h */,
-				A60B4AB41F3664A0001BA55E /* FSEventStream+SwiftBridging.m */,
-			);
-			path = "FSEvents helpers";
 			sourceTree = "<group>";
 		};
 		A631FEB31F461DBB00849B28 /* Editing Snippets */ = {
@@ -323,20 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A60B4AB81F3664F5001BA55E /* DirectoryObserver.swift in Sources */,
 				A69C62DF1F4900EF00B5DF4E /* HeadlessApplication.swift in Sources */,
 				A6ADEECE1F34EC0200CE605E /* SnippetsViewController.swift in Sources */,
 				A631FEB81F461E8800849B28 /* Snippet.swift in Sources */,
 				A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */,
-				A631FEC01F4636E000849B28 /* FileObserver.swift in Sources */,
 				A69C62DB1F48D8EB00B5DF4E /* Array+Convenience.swift in Sources */,
 				A6BB6C842028E63600B70375 /* Zip+3.swift in Sources */,
 				A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */,
-				A60B4AB51F3664AF001BA55E /* BNRFSEvent.m in Sources */,
 				A6BB6CB5202977D600B70375 /* OptionSet+Convenience.swift in Sources */,
 				A6C85A952003D0D300EA76CE /* SnippetsWindow.swift in Sources */,
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
-				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
 				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
 				A6BB6C862028EAF800B70375 /* FileSystemObserver.swift in Sources */,
 				A6BB6C822028E18700B70375 /* FileSystemEvent.swift in Sources */,
