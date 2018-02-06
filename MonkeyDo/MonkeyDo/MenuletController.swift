@@ -25,7 +25,7 @@ class MenuletController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     var typeScript: NSAppleScript! = nil
     
-    var watcher: FileObserver?
+    var fileObserver: FileSystemObserver?
     
     override func awakeFromNib() {
         statusItem.title = "🐵"
@@ -98,6 +98,7 @@ class MenuletController: NSObject {
     }
     
     func selectSnippetsFile() {
+        snippetsWC.close()
         let openPanel = makeOpenPanel()
         NSApp.activate(ignoringOtherApps: true)
         openPanel.begin { (response) in
@@ -110,6 +111,7 @@ class MenuletController: NSObject {
     }
     
     func newSnippetsFile() {
+        snippetsWC.close()
         let savePanel = makeSavePanel()
         NSApp.activate(ignoringOtherApps: true)
         savePanel.begin { (response) in
@@ -126,6 +128,7 @@ class MenuletController: NSObject {
     
     func loadSnippets(at url: URL,
                       andThen completion: ((BooleanResult)->Void)?) {
+        self.fileObserver = nil
         snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
@@ -135,8 +138,7 @@ class MenuletController: NSObject {
                 completion?(BooleanResult.failure(error))
             case .success(let snippets):
                 self.snippetStore.reset()
-                self.watcher = FileObserver(file: url)
-                self.watcher!.delegate = self
+                self.fileObserver = FileSystemObserver(url: url, handler: self.eventHandler)
                 completion?(BooleanResult.success)
                 print("Loaded \(snippets.count) snippets.")
             }
@@ -222,12 +224,13 @@ class MenuletController: NSObject {
 
 }
 
-extension MenuletController: FileObserverDelegate {
+extension MenuletController {
     
-    func fileObserver(_ observer: FileObserver,
-                      didObserveFileSystemEvents events: [BNRFSEvent]) {
-        guard let path = events.first?.path else { return }
-        let url = URL(fileURLWithPath: path)
+    func eventHandler(_ events: [FileSystemEvent]) {
+        guard let event = events.first(where: { $0.path == snippetStore.storeURL?.path }) else { return }
+        
+        let url = URL(fileURLWithPath: event.path)
+        
         snippetStore.load(from: url, andThenUpon: OperationQueue.main) { (result) in
             switch result {
             case .failure(let error):
