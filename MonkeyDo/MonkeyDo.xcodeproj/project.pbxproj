@@ -25,7 +25,9 @@
 		A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEED1F34F5CB00CE605E /* Result.swift */; };
 		A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */; };
 		A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */ = {isa = PBXBuildFile; fileRef = A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */; };
+		A6BB6C822028E18700B70375 /* FileSystemEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB6C812028E18700B70375 /* FileSystemEvent.swift */; };
 		A6BB6C842028E63600B70375 /* Zip+3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB6C832028E63600B70375 /* Zip+3.swift */; };
+		A6BB6C862028EAF800B70375 /* FileSystemObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB6C852028EAF800B70375 /* FileSystemObserver.swift */; };
 		A6BB6CB5202977D600B70375 /* OptionSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB6CB4202977D600B70375 /* OptionSet+Convenience.swift */; };
 		A6C85A952003D0D300EA76CE /* SnippetsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */; };
 /* End PBXBuildFile section */
@@ -67,7 +69,9 @@
 		A6BB3CA61F355D1400BEA498 /* MonkeyDo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MonkeyDo-Bridging-Header.h"; sourceTree = "<group>"; };
 		A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		A6BB3CB11F357B5500BEA498 /* TypePasteboard.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = TypePasteboard.scpt; sourceTree = "<group>"; };
+		A6BB6C812028E18700B70375 /* FileSystemEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemEvent.swift; sourceTree = "<group>"; };
 		A6BB6C832028E63600B70375 /* Zip+3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Zip+3.swift"; sourceTree = "<group>"; };
+		A6BB6C852028EAF800B70375 /* FileSystemObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemObserver.swift; sourceTree = "<group>"; };
 		A6BB6CB4202977D600B70375 /* OptionSet+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OptionSet+Convenience.swift"; sourceTree = "<group>"; };
 		A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnippetsWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +124,8 @@
 				A60B4AB71F3664BF001BA55E /* DirectoryObserver.swift */,
 				A631FEBF1F4636E000849B28 /* FileObserver.swift */,
 				A60B4AB01F366491001BA55E /* FSEvents helpers */,
+				A6BB6C812028E18700B70375 /* FileSystemEvent.swift */,
+				A6BB6C852028EAF800B70375 /* FileSystemObserver.swift */,
 			);
 			path = "Watching file changes";
 			sourceTree = "<group>";
@@ -332,6 +338,8 @@
 				A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */,
 				A60B4AB61F3664B3001BA55E /* FSEventStream+SwiftBridging.m in Sources */,
 				A631FEBE1F4624A400849B28 /* SnippetStore.swift in Sources */,
+				A6BB6C862028EAF800B70375 /* FileSystemObserver.swift in Sources */,
+				A6BB6C822028E18700B70375 /* FileSystemEvent.swift in Sources */,
 				A6ADEECC1F34EC0200CE605E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
