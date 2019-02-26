@@ -36,10 +36,6 @@ extension Snippet { // Equatable, Hashable
         return self.name == other.name && self.body == other.body
     }
     
-    override var hashValue: Int {
-        return name.hashValue
-    }
-    
     override var hash: Int {
         return name.hash
     }

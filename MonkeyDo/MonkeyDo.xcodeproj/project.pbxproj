@@ -16,7 +16,6 @@
 		A6ADEECE1F34EC0200CE605E /* SnippetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEECD1F34EC0200CE605E /* SnippetsViewController.swift */; };
 		A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEECF1F34EC0200CE605E /* Assets.xcassets */; };
 		A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6ADEED11F34EC0200CE605E /* Main.storyboard */; };
-		A6ADEEDF1F34EC0200CE605E /* MonkeyDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */; };
 		A6ADEEEA1F34F0DA00CE605E /* MenuletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */; };
 		A6ADEEEE1F34F5CB00CE605E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ADEEED1F34F5CB00CE605E /* Result.swift */; };
 		A6BB3CAB1F3564E500BEA498 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB3CAA1F3564E500BEA498 /* UserDefault.swift */; };
@@ -27,16 +26,6 @@
 		A6BB6CB5202977D600B70375 /* OptionSet+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BB6CB4202977D600B70375 /* OptionSet+Convenience.swift */; };
 		A6C85A952003D0D300EA76CE /* SnippetsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C85A942003D0D300EA76CE /* SnippetsWindow.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A6ADEEDB1F34EC0200CE605E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A6ADEEC01F34EC0200CE605E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A6ADEEC71F34EC0200CE605E;
-			remoteInfo = MonkeyDo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		A631FEB11F461D9500849B28 /* Snippets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Snippets.storyboard; sourceTree = "<group>"; };
@@ -51,7 +40,6 @@
 		A6ADEED21F34EC0200CE605E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6ADEED41F34EC0200CE605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6ADEED51F34EC0200CE605E /* MonkeyDo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MonkeyDo.entitlements; sourceTree = "<group>"; };
-		A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MonkeyDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6ADEEDE1F34EC0200CE605E /* MonkeyDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonkeyDoTests.swift; sourceTree = "<group>"; };
 		A6ADEEE01F34EC0200CE605E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6ADEEE91F34F0DA00CE605E /* MenuletController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuletController.swift; sourceTree = "<group>"; };
@@ -68,13 +56,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		A6ADEEC51F34EC0200CE605E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6ADEED71F34EC0200CE605E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -149,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */,
-				A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,24 +180,6 @@
 			productReference = A6ADEEC81F34EC0200CE605E /* MonkeyDo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A6ADEED91F34EC0200CE605E /* MonkeyDoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A6ADEEE61F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDoTests" */;
-			buildPhases = (
-				A6ADEED61F34EC0200CE605E /* Sources */,
-				A6ADEED71F34EC0200CE605E /* Frameworks */,
-				A6ADEED81F34EC0200CE605E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A6ADEEDC1F34EC0200CE605E /* PBXTargetDependency */,
-			);
-			name = MonkeyDoTests;
-			productName = MonkeyDoTests;
-			productReference = A6ADEEDA1F34EC0200CE605E /* MonkeyDoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,16 +187,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Mikey Ward";
 				TargetAttributes = {
 					A6ADEEC71F34EC0200CE605E = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-					};
-					A6ADEED91F34EC0200CE605E = {
-						CreatedOnToolsVersion = 9.0;
-						TestTargetID = A6ADEEC71F34EC0200CE605E;
 					};
 				};
 			};
@@ -252,7 +210,6 @@
 			projectRoot = "";
 			targets = (
 				A6ADEEC71F34EC0200CE605E /* MonkeyDo */,
-				A6ADEED91F34EC0200CE605E /* MonkeyDoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -266,13 +223,6 @@
 				A6ADEED01F34EC0200CE605E /* Assets.xcassets in Resources */,
 				A6ADEED31F34EC0200CE605E /* Main.storyboard in Resources */,
 				A6BB3CB31F357D9100BEA498 /* TypePasteboard.scpt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A6ADEED81F34EC0200CE605E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,23 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A6ADEED61F34EC0200CE605E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6ADEEDF1F34EC0200CE605E /* MonkeyDoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A6ADEEDC1F34EC0200CE605E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A6ADEEC71F34EC0200CE605E /* MonkeyDo */;
-			targetProxy = A6ADEEDB1F34EC0200CE605E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A6ADEED11F34EC0200CE605E /* Main.storyboard */ = {
@@ -360,6 +294,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -367,6 +302,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -394,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -417,6 +353,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -424,6 +361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -445,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -489,38 +427,6 @@
 			};
 			name = Release;
 		};
-		A6ADEEE71F34EC0200CE605E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VMY8R4T742;
-				INFOPLIST_FILE = MonkeyDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyDo.app/Contents/MacOS/MonkeyDo";
-			};
-			name = Debug;
-		};
-		A6ADEEE81F34EC0200CE605E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VMY8R4T742;
-				INFOPLIST_FILE = MonkeyDoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.MonkeyDoTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MonkeyDo.app/Contents/MacOS/MonkeyDo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -538,15 +444,6 @@
 			buildConfigurations = (
 				A6ADEEE41F34EC0200CE605E /* Debug */,
 				A6ADEEE51F34EC0200CE605E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A6ADEEE61F34EC0200CE605E /* Build configuration list for PBXNativeTarget "MonkeyDoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A6ADEEE71F34EC0200CE605E /* Debug */,
-				A6ADEEE81F34EC0200CE605E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

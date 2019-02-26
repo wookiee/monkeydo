@@ -17,13 +17,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.5.3</string>
+	<string>1.6</string>
 	<key>CFBundleVersion</key>
-	<string>304</string>
+	<string>313</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>We use an AppleScript to send keystrokes to the system.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017 Mikey Ward. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
