@@ -193,6 +193,11 @@
 					A6ADEEC71F34EC0200CE605E = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -398,6 +403,7 @@
 				CODE_SIGN_ENTITLEMENTS = MonkeyDo/MonkeyDo.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VMY8R4T742;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MonkeyDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -417,6 +423,7 @@
 				CODE_SIGN_ENTITLEMENTS = MonkeyDo/MonkeyDo.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = VMY8R4T742;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = MonkeyDo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
